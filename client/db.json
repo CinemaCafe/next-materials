@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "label": "Spider Man",
+      "content": "Your friendly neighborhood"
+    },
+    {
+      "id": "2",
+      "label": "Iron Man",
+      "content": "I'm Iron Man"
+    },
+    {
+      "id": "3",
+      "label": "Lord of Ring",
+      "content": "You shall not pass!!!"
+    },
+    {
+      "id": "4",
+      "label": "The Witcher",
+      "content": "If I have to choose between one evil and another, then I prefer not to choose at all."
+    },
+    {
+      "id": "5",
+      "label": "Harry Potter",
+      "content": "wingardium leviosa"
+    }
+  ]
+}
