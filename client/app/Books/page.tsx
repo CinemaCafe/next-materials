@@ -14,14 +14,31 @@ const BookPage = () => {
     }, []);
 
     const handleAddBook = (bookItem:BooksItem) => {
-        setBooks((prev) => [...prev, bookItem])
+        setBooks((prev) => [...prev, bookItem]);
     }
 
+    const handleUpdate = async (id:string, bookItem: BooksItem) => {
+        const response = await agent.BookAPI.update(bookItem.id, bookItem);
+        const updateBooks = books.map((book) => {
+            if (book.id === bookItem.id) {
+                return { ...book, ...response}
+            }
+            return book;
+        });
+        
+        setBooks(updateBooks);
+    }
+
+    const handleDelete = (id: string) => {
+        agent.BookAPI.delete(id);
+        const delbook = books.filter(book => book.id != id);
+        setBooks(delbook);
+    }
 
     return (
         <>
             <BooksAdd addBook={handleAddBook} />
-            <Accordion Items={books} />
+            <Accordion Items={books} handleUpdate={handleUpdate} handleDel={handleDelete}/>
         </>
 
     )

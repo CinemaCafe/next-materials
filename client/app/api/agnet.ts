@@ -50,7 +50,9 @@ const config = {
 
 const BookAPI = {
     getlist: () => requests.get("books", {}),
-    create: (book: BooksItem) => requests.post("books", book, {})
+    create: (book: BooksItem) => requests.post("books", book, {}),
+    update: (id:string, book:BooksItem) => requests.put(`books/${id}`, book, {}),
+    delete: (id:string) => requests.delete(`books/${id}`, {})
 }
 
 const agent = {
